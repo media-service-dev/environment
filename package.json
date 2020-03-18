@@ -1,0 +1,57 @@
+{
+  "name": "@mscs/environment",
+  "version": "0.1.0-DEV",
+  "description": "A library to load .env files and interact with the environment",
+  "author": "Jason Schilling <jschilling@media-service.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:media-service-dev/environment.git"
+  },
+  "keywords": [
+    "dotenv",
+    ".env",
+    "environment"
+  ],
+  "scripts": {
+    "build": "webpack --config webpack.config.js --mode=production",
+    "build:dev": "webpack --config webpack.config.js --mode=development --display-modules",
+    "build:watch": "webpack --config webpack.config.js --watch --mode=development",
+    "lint": "eslint ./src/**/* ./__tests__/**/*",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "docs": "typedoc src/ --listInvalidSymbolLinks"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "dist/**/*.d.ts",
+    "dist/**/*.d.ts.map",
+    "docs/",
+    "yarn.lock",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@mscs/eslint-config": "media-service-dev/eslint-config#master",
+    "@types/jest": "^25.1.4",
+    "@types/mock-fs": "^4.10.0",
+    "@types/node": "^13.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-simple-import-sort": "^5.0.1",
+    "jest": "^25.1.0",
+    "jest-each": "^25.1.0",
+    "mock-fs": "^4.11.0",
+    "ts-jest": "^25.2.1",
+    "ts-loader": "^6.2.1",
+    "typedoc": "^0.16.11",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
