@@ -19,10 +19,10 @@
     "build": "webpack --config webpack.config.js --mode=production",
     "build:dev": "webpack --config webpack.config.js --mode=development --display-modules",
     "build:watch": "webpack --config webpack.config.js --watch --mode=development",
-    "lint": "eslint ./src/**/* ./__tests__/**/*",
+    "lint": "eslint --no-error-on-unmatched-pattern ./src/**/* ./__tests__/**/*",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "docs": "typedoc src/ --listInvalidSymbolLinks"
+    "docs": "typedoc --listInvalidSymbolLinks src/"
   },
   "files": [
     "dist/**/*.js",
