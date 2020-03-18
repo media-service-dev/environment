@@ -14,6 +14,8 @@ jobs:
         with:
           node-version: 12
 
+      - run: yarn
+
       - run: yarn run lint --no-error-on-unmatched-pattern
 
       - run: yarn run test --ci
@@ -30,6 +32,8 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+
+      - run: yarn
 
       - run: yarn run lint --no-error-on-unmatched-pattern
 

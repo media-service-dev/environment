@@ -29,9 +29,9 @@ jobs:
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ubuntu-18.04-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ubuntu-18.04-yarn-1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ubuntu-18.04-yarn-
+            ubuntu-18.04-yarn-1-
 
       - run: yarn
 
