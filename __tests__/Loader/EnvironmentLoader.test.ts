@@ -17,10 +17,6 @@ describe("EnvironmentLoader", () => {
 
     describe("json", () => {
 
-        afterAll(() => {
-            mockFs.restore();
-        });
-
         it("should load", async () => {
             const environment = new ObjectEnvironment();
 
@@ -40,6 +36,8 @@ describe("EnvironmentLoader", () => {
 
             expect(environment.get("TEST_FOO")).toBe("bar");
             expect(environment.get("TEST_BAR")).toBe("baz");
+
+            mockFs.restore();
         });
 
         function getShouldLoadEnvTestData() {
@@ -135,6 +133,8 @@ describe("EnvironmentLoader", () => {
             if (expectedBar !== undefined) {
                 expect(environment.get("TEST_BAR")).toBe(expectedBar);
             }
+
+            mockFs.restore();
         });
 
         it("should overload", async () => {
@@ -158,15 +158,13 @@ describe("EnvironmentLoader", () => {
 
             expect(environment.get("TEST_FOO")).toBe("overloaded_foo");
             expect(environment.get("TEST_BAR")).toBe("overloaded_bar");
+
+            mockFs.restore();
         });
 
     });
 
     describe("dot env", () => {
-
-        afterAll(() => {
-            mockFs.restore();
-        });
 
         it("should load", async () => {
             const environment = new ObjectEnvironment();
@@ -187,6 +185,8 @@ describe("EnvironmentLoader", () => {
 
             expect(environment.get("TEST_FOO")).toBe("bar");
             expect(environment.get("TEST_BAR")).toBe("baz");
+
+            mockFs.restore();
         });
 
         function getShouldLoadEnvTestData() {
@@ -282,6 +282,8 @@ describe("EnvironmentLoader", () => {
             if (expectedBar !== undefined) {
                 expect(environment.get("TEST_BAR")).toBe(expectedBar);
             }
+
+            mockFs.restore();
         });
 
         it("should overload", async () => {
@@ -305,6 +307,8 @@ describe("EnvironmentLoader", () => {
 
             expect(environment.get("TEST_FOO")).toBe("overloaded_foo");
             expect(environment.get("TEST_BAR")).toBe("overloaded_bar");
+
+            mockFs.restore();
         });
 
     });
@@ -325,6 +329,8 @@ describe("EnvironmentLoader", () => {
             await environmentLoader.load("a");
         } catch (exception) {
             expect(exception).toHaveProperty("message", "Unable to read the \"a\" environment file.");
+        } finally {
+            mockFs.restore();
         }
     });
 
