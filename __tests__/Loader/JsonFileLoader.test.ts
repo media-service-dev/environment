@@ -13,15 +13,17 @@ describe("JsonFileLoader", () => {
 
     describe("parse", () => {
 
-        it("should ", () => {
+        it("should fail on missing file", async () => {
             // Arrange
             const loader = new JsonFileLoader();
 
             // Act
-            const actual = loader.load(".tes");
+            const actual = async () => {
+                await loader.load(".foo");
+            };
 
             // Assert
-            expect(actual).toBe("");
+            await expect(actual()).rejects.toThrow();
         });
 
     });

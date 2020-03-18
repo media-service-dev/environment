@@ -19,7 +19,7 @@ describe("JsonParser", () => {
         try {
             jsonParser.parse("file.json", "{\"TEST_FOO:\"bar\"}");
         } catch (exception) {
-            expect(exception).toHaveProperty("message", "Unable to parse environment JSON data. Unexpected token b in JSON at position 12");
+            expect(exception).toHaveProperty("message", "Unable to parse JSON data from file \"file.json\". Unexpected token b in JSON at position 12");
         }
     });
 
