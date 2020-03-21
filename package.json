@@ -35,7 +35,7 @@
     "LICENSE"
   ],
   "devDependencies": {
-    "@mscs/eslint-config": "media-service-dev/eslint-config#master",
+    "@mscs/eslint-config": "^0.1.2",
     "@types/jest": "^25.1.4",
     "@types/mock-fs": "^4.10.0",
     "@types/node": "^13.9.0",
