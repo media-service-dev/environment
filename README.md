@@ -1,7 +1,7 @@
 
 # @mscs/environment
 
-**Version:** 0.1.0-DEV
+A library to load and interact with the environment. 
 
 ## Installation
 
