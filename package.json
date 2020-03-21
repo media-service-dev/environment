@@ -1,6 +1,6 @@
 {
   "name": "@mscs/environment",
-  "version": "0.1.0",
+  "version": "0.1.1-DEV",
   "description": "A library to load .env files and interact with the environment",
   "author": "Jason Schilling <jschilling@media-service.com>",
   "license": "SEE LICENSE IN LICENSE",
