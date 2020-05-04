@@ -3,7 +3,7 @@
   "version": "0.2.0-DEV",
   "description": "A library to load .env files and interact with the environment",
   "author": "Jason Schilling <jschilling@media-service.com>",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "repository": {
@@ -19,7 +19,7 @@
     "build": "webpack --config webpack.config.js --mode=production",
     "build:dev": "webpack --config webpack.config.js --mode=development --display-modules",
     "build:watch": "webpack --config webpack.config.js --watch --mode=development",
-    "lint": "eslint ./src/**/* ./__tests__/**/*",
+    "lint": "eslint \"./src/**/*\" \"./__tests__/**/*\"",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "docs": "typedoc --listInvalidSymbolLinks src/"
