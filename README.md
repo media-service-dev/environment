@@ -1,7 +1,7 @@
 
 # @mscs/environment
 
-A library to load and interact with the environment. 
+A library to load and interact with the environment.
 
 ## Installation
 
@@ -16,14 +16,20 @@ Short example:
 ```typescript
 import { EnvironmentLoader, ProcessEnvironment } from "@mscs/environment";
 
-const environment = new ProcessEnvironment();
-const environmentLoader = new EnvironmentLoader(environment);
-environmentLoader.loadEnvironment(__dirname + '/../.env');
+async function runtime(){
+    const environment = new ProcessEnvironment();
+    const environmentLoader = new EnvironmentLoader(environment);
 
-if(environment.has('FOO')){
-    const foo = environment.get("FOO");
-    // ...
+    await environmentLoader.loadEnvironment(__dirname + '/../.env');
+
+    if(environment.has('FOO')){
+        const foo = environment.get("FOO");
+        // ...
+    }
 }
+
+runtime()
+    .catch(console.error);
 ```
 
 *This example expect that you are in a root file of the `src` directory in your project.*
@@ -37,9 +43,9 @@ $ git clone git@github.com:media-service-dev/environment.git
 $ cd environment
 $ yarn
 $ yarn run docs
-```  
+```
 
-# Important note 
+# Important note
 
 The parser for `.env`-files and the environment file loading order logic was ported from [Symfony](https://symfony.com/).
 
