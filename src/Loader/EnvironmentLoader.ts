@@ -185,7 +185,7 @@ export class EnvironmentLoader implements EnvironmentLoaderInterface {
     }
 
     /**
-     * Loads the actual file, [[parse|parses]] and [[normalize|normalizes]] the content and [[populate|populates]] the variables.
+     * Loads the actual file, [[parse|parses]] and normalizes the content and [[populate|populates]] the variables.
      *
      * @param {boolean} override
      * @param {string[]} files
