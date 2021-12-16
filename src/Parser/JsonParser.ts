@@ -20,7 +20,11 @@ export class JsonParser implements ParserInterface {
 
             return this.normalize(values);
         } catch (exception) {
-            throw new RuntimeException(`Unable to parse JSON data from file "${filePath}". ${exception.message}`);
+            if (exception instanceof Error) {
+                throw new RuntimeException(`Unable to parse JSON data from file "${filePath}". ${exception.message}`);
+            } else {
+                throw new RuntimeException(`Unable to parse JSON data from file "${filePath}". ${JSON.stringify(exception)}`);
+            }
         }
     }
 
